@@ -1,5 +1,6 @@
 import pandas as pd
 from sklearn.datasets import load_diabetes
+import numpy as np
 
 diabetes = load_diabetes(as_frame=True)
 df = diabetes['data']
@@ -46,23 +47,30 @@ print(df.mean())
 print(df.mean(axis=1))
 df['avg'] = df.mean(axis=1)
 print(df)
-'''
 
 
 print(df.drop('age', axis=1))
 print(df.drop(0, axis=0))
 
+df['New col'] = df["age"]*100
+print(df)
 
+df['New col'] = df['age'] + df['sex']
 
+listA = range(440)
+listA = np.nan(listA)
 
+df['New col'] = listA
 
+print(df['age'][0])
+print(df['age'].isin([0.038075906433423026]))
+'''
 
+print(df.sample(n=5))
 
+print(df.sample(n=5, random_state=37))
 
-
-
-
-
+print(df.sample(n=10, replace=True))
 
 
 
