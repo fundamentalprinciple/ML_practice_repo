@@ -1,10 +1,12 @@
 import pandas as pd
 from sklearn.datasets import load_diabetes
 import numpy as np
+np.random.seed(37)
 
 diabetes = load_diabetes(as_frame=True)
 df = diabetes['data']
-print(df)
+
+s = pd.Series(np.random.rand(10))
 
 '''
 #.loc, .iloc
@@ -64,13 +66,34 @@ df['New col'] = listA
 
 print(df['age'][0])
 print(df['age'].isin([0.038075906433423026]))
-'''
 
 print(df.sample(n=5))
 
 print(df.sample(n=5, random_state=37))
 
 print(df.sample(n=10, replace=True))
+
+print(df['age'] == 0.038075906433423026)
+
+print(df[df['age'] == 0.038075906433423026])
+print((s.mean(), s.sum(), s.std(), s.min(), s.max(), s.count()))
+
+'''
+
+np.random.seed(37)
+
+diabetes = load_diabetes(as_frame=True)
+df = diabetes['data']
+
+s = pd.Series(np.random.rand(10))
+
+df = pd.DataFrame({
+        "A": np.random.rand(5),
+        "B": np.random.rand(5)
+})
+
+print(df.mean(axis=0))
+print(df.mean(axis=1))
 
 
 
