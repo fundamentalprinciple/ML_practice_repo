@@ -78,6 +78,10 @@ print(df['age'] == 0.038075906433423026)
 print(df[df['age'] == 0.038075906433423026])
 print((s.mean(), s.sum(), s.std(), s.min(), s.max(), s.count()))
 
+print(df.mean(axis=0))
+print(df.mean(axis=1))
+
+
 '''
 
 np.random.seed(37)
@@ -92,8 +96,19 @@ df = pd.DataFrame({
         "B": np.random.rand(5)
 })
 
-print(df.mean(axis=0))
-print(df.mean(axis=1))
+df = pd.DataFrame({
+    "key": ["A", "B", "C", "A", "B", "C"],
+    "x": [0, 1, 2, 3, 4, 5],
+    "y": [10, 20, 30, 40, 50, 60]
+})
+
+g = df.groupby("key")
+
+print(df)
+print(type(g))
+print(g)
+print((g.sum(), g.mean(), g.count(), g.min(), g.max()))
+
 
 
 
