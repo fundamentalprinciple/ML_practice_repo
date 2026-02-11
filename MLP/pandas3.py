@@ -84,6 +84,7 @@ print(df.mean(axis=1))
 
 '''
 
+'''
 np.random.seed(37)
 
 diabetes = load_diabetes(as_frame=True)
@@ -108,6 +109,44 @@ print(df)
 print(type(g))
 print(g)
 print((g.sum(), g.mean(), g.count(), g.min(), g.max()))
+'''
+
+'''
+df = pd.Series([180, 175, 168, 190], index=["A","B","C","D"])
+
+def convert(cm):
+    return cm*0.0328084
+
+print(df.apply(convert))
+'''
+
+'''
+df = pd.DataFrame({"name": ["John Doe", "Dohn Joe"]})
+
+print(df)
+
+def first_name(s):
+    return s.split()[0]
+
+df["FirstName"] = df["name"].apply(first_name)
+print(df)
+'''
+
+'''
+df = pd.Series(["A","B","A","C"])
+mapping = {"A":4, "B":3, "C":2}
+print(df.map(mapping))
+'''
+
+
+
+
+
+
+
+
+
+
 
 
 
