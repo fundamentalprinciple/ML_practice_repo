@@ -138,11 +138,19 @@ mapping = {"A":4, "B":3, "C":2}
 print(df.map(mapping))
 '''
 
+'''
+df1 = pd.DataFrame({
+            "col1":[1,2,3],
+            "col2":[4,5,6]
+    })
 
-
-
-
-
+df2 = pd.DataFrame({
+            "col1":[7,8,9],
+            "col4":[10,11,12]
+    })
+print(pd.concat([df1,df2], axis=0, keys=["A","B"], join="inner"))
+print(pd.concat([df1,df2], axis=1, keys=["A","B"], join="inner"))
+'''
 
 
 
