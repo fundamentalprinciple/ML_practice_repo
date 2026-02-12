@@ -83,48 +83,29 @@ print(t)
 print(t.shape)
 '''
 
+'''
 t = torch.arange(1,10).reshape(3,3)
 print(t)
 t = t.permute(1,0)
 print(t)
 print(t.shape)
+'''
 
+'''
+n = np.array([1,2,3])
+print(n)
+t = torch.from_numpy(n)
+print(t)
+n[0] = 0
+print(n,t)
+'''
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+'''
+t = torch.arange(1,10)
+n1 = t.numpy()
+print(t,n1)
+print(type(n1))
+'''
 
 
 
