@@ -107,6 +107,33 @@ print(t,n1)
 print(type(n1))
 '''
 
+'''
+torch.manual_seed(453)
+t = torch.rand(3,3)
+print(t)
+
+print(torch.cuda.is_available())
+'''
+
+#Obviously no CUDA support so practicing hardware acceleration on Google Colab
+'''
+t = torch.tensor([1,2,3])
+s = t.to("cuda")
+print(s)
+'''
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
