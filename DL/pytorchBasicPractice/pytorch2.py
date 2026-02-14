@@ -122,8 +122,9 @@ s = t.to("cuda")
 print(s)
 '''
 
-
-
+t = torch.arange(12)
+del t
+#print(t) 
 
 
 
