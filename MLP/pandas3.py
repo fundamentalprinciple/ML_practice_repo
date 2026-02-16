@@ -116,7 +116,6 @@ df = pd.Series([180, 175, 168, 190], index=["A","B","C","D"])
 
 def convert(cm):
     return cm*0.0328084
-
 print(df.apply(convert))
 '''
 
@@ -152,10 +151,35 @@ print(pd.concat([df1,df2], axis=0, keys=["A","B"], join="inner"))
 print(pd.concat([df1,df2], axis=1, keys=["A","B"], join="inner"))
 '''
 
+'''
+df1 = pd.DataFrame({
+            "col1": [1,2,3],
+            "col2": [4,5,6]
+})
 
+df2 = pd.DataFrame({
+            "col1": [1,2,3],
+            "col2": [7,8,9]
+})
 
+print(df1.compare(df2))
+print(df1.compare(df2, keep_equal=True))
+'''
 
+data = {
+    "Date": ['2022-01-01', '2022-01-01', '2022-01-02', '2022-01-02'],
+    "Category": ['A', 'B', 'A', 'B'],
+    "Value": [10,20,30,40]
+}
+df = pd.DataFrame(data)
+print(df)
 
+df_pt = df.pivot_table(
+    values="Value",
+    index="Date",
+    columns="Category",
+    aggfunc = "mean",
+    fill_value = 0
+)
 
-
-
+print(df_pt)
