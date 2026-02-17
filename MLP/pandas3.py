@@ -166,6 +166,7 @@ print(df1.compare(df2))
 print(df1.compare(df2, keep_equal=True))
 '''
 
+'''
 data = {
     "Date": ['2022-01-01', '2022-01-01', '2022-01-02', '2022-01-02'],
     "Category": ['A', 'B', 'A', 'B'],
@@ -181,5 +182,41 @@ df_pt = df.pivot_table(
     aggfunc = "mean",
     fill_value = 0
 )
+'''
 
-print(df_pt)
+df1 = pd.DataFrame({
+            "UserID": [1,2,3,5],
+            "Name": ["John", "Kohn", "Mohn", "Sohn"],
+            "Age": [18,19,20,21],
+            "Gender": ["M","F","M","F"]
+})
+
+
+df2 = pd.DataFrame({
+            "UserID": [1,2,3,4],
+            "CreditScore": [0.75, 0.83, 0.95, 0.99],
+            "Balance": [1800,1900,2000,2100],
+            "Gender": ["M","F","M","F"]
+})
+
+print(df1.merge(df2, how="inner"))
+print(df1.merge(df2, how="inner", on="UserID"))
+print(df1.merge(df2, how="inner", on=["UserID","Gender"]))
+print(df1.merge(df2, how="outer"))
+print(df1.merge(df2, how="left"))
+print(df1.merge(df2, how="right"))
+print(df1.merge(df2, how="cross"))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
