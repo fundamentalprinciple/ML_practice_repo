@@ -1,11 +1,14 @@
 #loader
 from sklearn.datasets import load_iris
 
-X,y = load_iris(return_X_y=True)
+dataset = load_iris()
 #X,y=dataset.data,dataset.target
-
 #print(X,y)
 
+#print(dataset.feature_names)
+#print(dataset.target_names)
+#print(dataset.DESCR)
+#print(dataset.filename)
 
 #fetcher
 from sklearn.datasets import fetch_california_housing
