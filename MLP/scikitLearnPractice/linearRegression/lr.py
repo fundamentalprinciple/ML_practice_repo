@@ -10,7 +10,7 @@ X,y = load_iris(return_X_y=True)
 
 X_train, X_test, y_train, y_test = train_test_split(X,y, test_size=0.2, random_state=42)
 
-print(X.shape,X_train.shape,X_test.shape)
+#print(X.shape,X_train.shape,X_test.shape)
 
 lr_model = LinearRegression()
 lr_model.fit(X_train,y_train)
